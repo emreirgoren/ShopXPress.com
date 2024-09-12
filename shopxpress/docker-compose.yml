@@ -1,0 +1,5 @@
+mongo:
+  image: mongo
+  container_name: mongodb-container-shopxpress
+  ports:
+    - "28017:27017"
