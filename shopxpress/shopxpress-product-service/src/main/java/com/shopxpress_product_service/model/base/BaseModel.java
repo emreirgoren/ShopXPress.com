@@ -5,10 +5,14 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Data
 public abstract class BaseModel {
+
+    @Id
+    private String id;
 
     /**
      * Aktif true

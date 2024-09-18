@@ -1,5 +1,7 @@
 package com.shopxpress_product_service.model;
 
+import com.shopxpress_product_service.model.constant.ModelConstants;
+import com.shopxpress_product_service.model.constant.SellerModelConstant;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -13,19 +15,19 @@ public class Seller {
     private Long sellerId;
 
     @NotBlank(message = "Seller name is required")
-    @Field("name")
+    @Field(ModelConstants.NAME)
     private String name;
 
-    @Field("email")
+    @Field(SellerModelConstant.EMAIL)
     private String email;
 
-    @Field("phone_number")
+    @Field(SellerModelConstant.PHONE_NUMBER)
     private String phoneNumber;
 
-    @Field("address")
+    @Field(SellerModelConstant.ADDRESS)
     private String address;
 
-    @Field("rating")
+    @Field(SellerModelConstant.RATING)
     private Rating rating;
 
 }

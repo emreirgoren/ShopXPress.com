@@ -1,6 +1,8 @@
 package com.shopxpress_product_service.model;
 
 import com.shopxpress_product_service.model.base.BaseModel;
+import com.shopxpress_product_service.model.constant.ModelConstants;
+import com.shopxpress_product_service.model.constant.ProductModelConstants;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -15,36 +17,36 @@ import java.util.List;
 public class Product extends BaseModel {
 
     @NotBlank(message = "Product name cannot be empty")
-    @Field("name")
+    @Field(ModelConstants.NAME)
     private String name;
 
-    @Field("description")
+    @Field(ModelConstants.DESCRIPTION)
     private String description;
 
     @Min(value = 0, message = "Price should not be less than 0")
-    @Field("price")
+    @Field(ProductModelConstants.PRICE)
     private double price;
 
-    @Field("images")
+    @Field(ProductModelConstants.IMAGES)
     private List<byte[]> imageList;
 
-    @Field("stock_quantity")
+    @Field(ProductModelConstants.STOCK_QUANTITY)
     private int stockQuantity;
 
     @DBRef
-    @Field("brand")
+    @Field(ProductModelConstants.BRAND)
     private Brand brand;
 
     @DBRef
-    @Field("categories")
+    @Field(ProductModelConstants.CATEGORIES)
     private List<Category> categories;
 
     @DBRef
-    @Field("seller")
+    @Field(ProductModelConstants.SELLER)
     private Seller seller;
 
     @DBRef
-    @Field("ratings")
+    @Field(ProductModelConstants.RATINGS)
     private List<Rating> ratings;
 
 }
