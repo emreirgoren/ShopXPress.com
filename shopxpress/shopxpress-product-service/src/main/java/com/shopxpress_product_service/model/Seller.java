@@ -2,12 +2,16 @@ package com.shopxpress_product_service.model;
 
 import com.shopxpress_product_service.model.constant.ModelConstants;
 import com.shopxpress_product_service.model.constant.SellerModelConstant;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
+@Getter
+@Setter
 @Document(collection = "sellers")
 public class Seller {
 
