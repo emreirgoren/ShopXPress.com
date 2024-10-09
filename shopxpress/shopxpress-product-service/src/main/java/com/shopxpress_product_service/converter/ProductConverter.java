@@ -15,25 +15,6 @@ import java.util.List;
 public class ProductConverter {
 
 
-    public static CreateProductResponse CreateProductRequestToCreateProductResponse(CreateProductRequest request){
-
-        if (request == null){
-            throw new IllegalArgumentException("CreateProductRequest cannot be null");
-        }
-        CreateProductResponse response = new CreateProductResponse();
-        response.setName(request.getName());
-        response.setDescription(request.getDescription());
-        response.setPrice(request.getPrice());
-        response.getImageList().add(request.getImage());
-        response.setStockQuantity(request.getStockQuantity());
-        response.setBrand(request.getBrand());
-        //response.getCategoryList().add(request.getCategory());
-
-        response.setSeller(request.getSeller());
-
-        return response;
-    }
-
     public static Product CreateProductRequestToProduct(CreateProductRequest request, Brand brand,Seller seller){
         if( request == null ){
             throw new IllegalArgumentException("CreateProductRequest cannot be null");
